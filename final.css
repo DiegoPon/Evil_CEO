@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background: purple;
+    background: rgba(36, 105, 166, 1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,35 +18,99 @@ body {
 /* Title screen stuff */
 .title_screen{
     background-color: chartreuse;
+    background-image: url("art_assets/temp_title.jpg");
+    background-position: center;
+    background-repeat:space;
+    background-size:100% 100%;
+    
     width: 1280px;
     height: 800px;    
-    z-index: 2;
+    z-index: 3;
     pointer-events: auto;
     position: absolute;
 }
 
 #start_button{
-    z-index: 3;
-    width: 30%;
+    z-index: 4;
+    width: 5%;
+    opacity: 30%;
+    position: absolute;
+    left: 45%;
+    top: 50%;
 }
 
 /*office/vacation area */
 
+#the_will{
+    width: 1280px;
+    height: 800px;
+    pointer-events: auto;
+    position: absolute;
+    z-index: 2;
+    color: black;
+    background-color: rgba(0,0,0,0.5);
+    
+}
+
+#paper{
+    position: absolute;
+    z-index: 2;
+    height: 700px;
+    width: 700px;
+    left: 15%;
+    top:5%;
+    background-color: white;    
+}
+
+#paper p{   
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    
+}
+
 .office div{
     z-index: 1;
 }
+/**/
+.chromatic_text {
+  font-weight: bold;
+  background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet, red);
+  background-size: 1400% 1400%; /* Large to allow smooth animation */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 10s linear infinite;
+}
+
+@keyframes rainbow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+/**/
 
 #vacation_background{
     background-color: red;
+    background-image: url("./art_assets/office_background/Window3.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     position: absolute;
-    left: 5%;
+    left: 15%;
     top:10%;
-    width: 90%;
+    width: 950px;
+    height: 550px;
+     /* old values and stuff  
+      width: 1152px;
     height: 440px;
+     */
+
 }
 
 #vacation_laptop{
     background-color: blue;
+    background-image: url("art_assets/screens/laptopscreen.jpg");
+    background-size: contain;
+
     position: absolute;
     left: 53%;
     top:30%;
@@ -67,7 +131,7 @@ body {
      width: 1280px;
     height: 800px;    
     background-color: black;
-    background-image: url("window.png");
+    background-image: url("art_assets/screens/desktopscreen.jpg");
     background-size:cover;
     background-repeat: no-repeat;
 }
@@ -81,17 +145,20 @@ body {
 
 #email_window{
     left: 10%;  
-    background-color: yellow;
+    background-color: black;
     width: 750px;
     height: 440px;
+    background-image: url("./art_assets/popups/inbox.png");
+    background-size:cover;
+
 }
 
 #email_text_container{
     right: 3%;
-    top: 9%;
+    top: 16%;
     width: 528px;
     height: 340px;
-    background-color: chartreuse;
+    /*background-color: chartreuse;*/
     position: absolute;
     z-index: inherit;
 }
@@ -104,9 +171,15 @@ body {
 }
 
 #choice_window{
-    width: 650px;
-    height: 500px;
+    width: 750px;
+    height: 440px;
     right: 10%;
     bottom: 10%;
-    background-color: pink;
+    background-color: none;
+    background-image: url("art_assets/popups/decision.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
+
+/* setting */
+

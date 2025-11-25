@@ -33,22 +33,11 @@ const choice_value = [
      [0,1,3]
 ];
 
-if (evil_score < 28){
-    //good ending
-}
-else if(evil_score > 280){
-//super bad ending 
-}
-else{
-    //saint ending
-}
-
-
 
 
 const scenario = ["\
     \
-    Rumors of a strike among the [COMPANY NAME] factory worker’s union are circulating. \
+    Rumors of a strike among the company factory worker’s union are circulating. \
     Granting the union their wishes may help boost company morale as well as the overall health, wellbeing, \
     and happiness of all you workers, but at a slight, near imperceptible cost to your shareholders dividends! "]
 // scenario 1
@@ -64,14 +53,13 @@ function update_office_screen(){
 
 //title stuff
 $title_start.on("click", function(){
-    //$(".title_screen").remove();
-    
-    var audio = new Audio("../environ/jackenstein-laugh.mp3"); // create audio
+    $(".title_screen").remove();
+    var audio = new Audio("../ART101/ART101/environ/jackenstein-laugh.mp3"); // create audio
     audio.play(); // start playing
     
+    bg_music.play();
     audio.onended = function() {
         $(".title_screen").remove();
-        bg_music.play();
     };
     
 });
@@ -115,6 +103,11 @@ function generate_graphs(){
     //take in evil amount, and growth,
     //divide it and change it around using arbutary numbers
 }
+$email.on("mousedown",function(){
+    $(this).css("z-index", 11);
+    $response.css("z-index", 10);
+
+});
 
 $email.on("click",function(){
     $(this).css("z-index", 11);
@@ -126,6 +119,11 @@ $response.on("click", function(){
     $email.css("z-index", 10);
 
 });
+$response.on("mousedown", function(){
+    $(this).css("z-index", 11);
+    $email.css("z-index", 10);
+
+});
 
 
 
@@ -133,6 +131,8 @@ $response.on("click", function(){
 
 $(".desktop").css("opacity", 0);
 $(".desktop").css("pointer-events", "none");
+$(".settings").css("opacity", 0);
+$(".settings").css("pointer-events", "none");
 
 
 // audio functionality (this is just technical stuff)
@@ -152,7 +152,7 @@ $("#background_ac_slider").on("input", function () {
 });
 
 //preload audio
-let bg_music = new Audio("EVOCEO (possible song).wav");
+let bg_music = new Audio("audio_assets/evilceo(maaaybeee).mp3");
 bg_music.loop = true;
 bg_music.preload = "auto";
 bg_music.load;
@@ -163,4 +163,51 @@ ac_noise.preload = "auto";
 ac_noise.load;
 
 
+let user_name = "";
+let company_name = "";
 
+//myucode
+$("#submit_name").on("click",function(){
+    if(($("#name_input").val() != "") && ($("#company_input").val() != "")){
+        user_name = $("#name_input").val() ;
+        company_name = $("#company_input").val();
+        $("#the_will").remove();
+
+    }
+});
+//
+
+
+
+
+function enableFreeDrag(el) {
+  let startX, startY;
+
+  el.addEventListener("mousedown", e => {
+    startX = e.clientX - el.offsetLeft;
+    startY = e.clientY - el.offsetTop;
+
+    const move = e => {
+      let x = e.clientX - startX;
+      let y = e.clientY - startY;
+
+      // Constrain inside viewport
+      x = Math.max(0, Math.min(x, window.innerWidth - el.offsetWidth));
+      y = Math.max(0, Math.min(y, window.innerHeight - el.offsetHeight));
+
+      el.style.left = x + "px";
+      el.style.top = y + "px";
+    };
+
+    const stop = () => {
+      document.removeEventListener("mousemove", move);
+      document.removeEventListener("mouseup", stop);
+    };
+
+    document.addEventListener("mousemove", move);
+    document.addEventListener("mouseup", stop);
+  });
+}
+
+// Apply to all draggables
+document.querySelectorAll(".draggable").forEach(enableFreeDrag);
