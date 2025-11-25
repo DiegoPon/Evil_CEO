@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    background: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+}
+
+#outer_layer {
+        width: 1280px;
+        height: 800px;
+        background: rgb(33, 147, 133); /* Change this color if needed */
+        position: relative;
+}
+
+/* Title screen stuff */
+.title_screen{
+    background-color: chartreuse;
+    width: 1280px;
+    height: 800px;    
+    z-index: 2;
+    pointer-events: auto;
+    position: absolute;
+}
+
+#start_button{
+    z-index: 3;
+    width: 30%;
+}
+
+/*office/vacation area */
+
+.office div{
+    z-index: 1;
+}
+
+#vacation_background{
+    background-color: red;
+    position: absolute;
+    left: 5%;
+    top:10%;
+    width: 90%;
+    height: 440px;
+}
+
+#vacation_laptop{
+    background-color: blue;
+    position: absolute;
+    left: 53%;
+    top:30%;
+    width: 400px;
+    height: 240px;
+
+}
+
+
+ /* desktop values and stuff  */
+
+
+
+.desktop{
+    z-index: 10;
+    pointer-events: auto;
+    position: absolute;
+     width: 1280px;
+    height: 800px;    
+    background-color: black;
+    background-image: url("window.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+
+.windows{
+ 
+    top:10%;
+    position: absolute;
+}
+
+#email_window{
+    left: 10%;  
+    background-color: yellow;
+    width: 750px;
+    height: 440px;
+}
+
+#email_text_container{
+    right: 3%;
+    top: 9%;
+    width: 528px;
+    height: 340px;
+    background-color: chartreuse;
+    position: absolute;
+    z-index: inherit;
+}
+
+#email_text_container p {
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    
+}
+
+#choice_window{
+    width: 650px;
+    height: 500px;
+    right: 10%;
+    bottom: 10%;
+    background-color: pink;
+}
