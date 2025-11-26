@@ -130,7 +130,7 @@ body {
     position: absolute;
      width: 1280px;
     height: 800px;    
-    background-color: black;
+    background-color: transparent;
     background-image: url("art_assets/screens/desktopscreen.jpg");
     background-size:cover;
     background-repeat: no-repeat;
@@ -145,7 +145,7 @@ body {
 
 #email_window{
     left: 10%;  
-    background-color: black;
+    background-color: transparent;
     width: 750px;
     height: 440px;
     background-image: url("./art_assets/popups/inbox.png");
@@ -175,10 +175,42 @@ body {
     height: 440px;
     right: 10%;
     bottom: 10%;
-    background-color: none;
+    background-color: transparent;
     background-image: url("art_assets/popups/decision.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    position: absolute;
+}
+#choice_window_text_container{
+    background-color: transparent;
+    width:600px;
+    height:150px;
+    color:rgba(36, 105, 166, 1);
+    top: 50%;
+    left:12%;
+    position: inherit;
+  
+}
+#choice_window button{
+    z-index: inherit;
+    position: absolute;
+    width: 100px;
+    height: 25px;
+    color: blueviolet;
+    bottom: 10%;
+
+}
+
+#choice_1{
+    left: 15%;
+}
+
+#choice_2{
+    left: 40%;
+}
+
+#choice_3{
+    left: 70%;
 }
 
 /* setting */

@@ -85,8 +85,9 @@ $laptop.on("mouseleave", function() {
 });
 function laptop_clicked(){
     update_office_screen();
-    generate_email("erm this is an email",choices[0],choice_value[0], scenario[0]);
+    generate_email(choices[0],choice_value[0], scenario[0]);
     $("#email_text").html(scenario[0])
+
 }
 
 // desktop shenanigans 
@@ -95,6 +96,10 @@ function generate_email(choices_array, choices_value_array, scenario_text){
     $(".desktop").css("opacity", 1);
     $(".desktop").css("pointer-events", "auto");    
     //arrays are used to generate or replace text in designated div's
+    let new_choices = "First choice: " + choices_array[0];
+    new_choices += "<br>Secound choice: " + choices_array[1];
+    new_choices += "<br>Third choice: " + choices_array[2];
+    $("#choice_window_text").html(new_choices)
 
 };
 
