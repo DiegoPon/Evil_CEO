@@ -90,11 +90,17 @@ function laptop_clicked(){
 
 }
 
+
+
+
+
+
 // desktop shenanigans 
 
 function generate_email(choices_array, choices_value_array, scenario_text){
     $(".desktop").css("opacity", 1);
-    $(".desktop").css("pointer-events", "auto");    
+    $(".desktop").css("pointer-events", "auto");  
+    $("#evil-meter-container").css("z-index",11)  
     //arrays are used to generate or replace text in designated div's
     let new_choices = "First choice: " + choices_array[0];
     new_choices += "<br>Secound choice: " + choices_array[1];
@@ -102,6 +108,24 @@ function generate_email(choices_array, choices_value_array, scenario_text){
     $("#choice_window_text").html(new_choices)
 
 };
+
+$("#choice_1").on("click", function(){
+    evil_score += choice_value[0][0];
+    setEvilMeter(evil_score);
+    $("#email_text_container").css("opacity", 0);
+    $("#email_window").css("backgroundImage", 'url("art_assets/popups/angrystock.png")');
+
+});
+$("#choice_2").on("click", function(){
+    evil_score += choice_value[0][1];
+   setEvilMeter(evil_score);
+
+});
+$("#choice_3").on("click", function(){
+    evil_score += 10;
+setEvilMeter(evil_score);
+
+});
 
 
 function generate_graphs(){
@@ -216,3 +240,14 @@ function enableFreeDrag(el) {
 
 // Apply to all draggables
 document.querySelectorAll(".draggable").forEach(enableFreeDrag);
+
+
+function setEvilMeter(value) {
+    // value: integer from 0 to 100
+    const fill = document.getElementById("evil-meter-fill");
+    fill.style.height = Math.min(Math.max(value, 0), 100) + "%";
+}
+
+// Example usage:
+//let evilValue = 0; // can be any integer 0–100
+setEvilMeter(evil_score);

@@ -120,11 +120,12 @@ body {
 }
 
 
- /* desktop values and stuff  */
+/* desktop values and stuff  */
 
 
 
 .desktop{
+    font-family: "fontfancy", 'Courier New', Courier, monospace;
     z-index: 10;
     pointer-events: auto;
     position: absolute;
@@ -162,13 +163,21 @@ body {
     position: absolute;
     z-index: inherit;
 }
+@font-face{
+  font-family: "fontfancy";
+  src: url("/art_assets/CascadiaCode-VariableFont_wght.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
 
+}
 #email_text_container p {
     padding: 10px;
     padding-left: 30px;
     padding-right: 30px;
     
 }
+
+
 
 #choice_window{
     width: 750px;
@@ -215,3 +224,34 @@ body {
 
 /* setting */
 
+/*erm*/
+#evil-meter-container {
+    width: 50px;           /* width of the meter */
+    height: 200px;         /* height of the meter */
+    background-color: grey; /* background bar */
+    border: 2px solid black;
+    position: absolute;
+    display: flex;
+    flex-direction: column-reverse; /* fill from bottom */
+    align-items: center;
+    margin: 20px;
+    z-index: 1;
+    bottom: 10%;
+    
+}
+
+#evil-meter-fill {
+    width: 100%;
+    background-color: red;
+    height: 0%;            /* initial fill, 0% */
+    transition: height 0.3s ease; /* smooth animation */
+    z-index: inherit;
+}
+
+#evil-meter-label {
+    z-index: inherit;
+    position: absolute;
+    bottom: -55px;
+    font-weight: bold;
+    text-align: center;
+}
