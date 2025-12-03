@@ -12,7 +12,12 @@ var volume = 100;
 var growth = 3;
 
 const images = [
-    "jombo.png",
+    "art_assets/office_background/Window1.png",
+    "art_assets/office_background/Window2.png",
+    "art_assets/office_background/Window3.png",
+    "art_assets/office_background/Window4.png",
+    "art_assets/office_background/Window5.png",
+    "art_assets/office_background/Window6.png",
     "../environ/jimbo.png",
     "../environ/there.jpg",
     ""
@@ -39,7 +44,12 @@ const scenario = ["\
     \
     Rumors of a strike among the company factory worker’s union are circulating. \
     Granting the union their wishes may help boost company morale as well as the overall health, wellbeing, \
-    and happiness of all you workers, but at a slight, near imperceptible cost to your shareholders dividends! "]
+    and happiness of all you workers, but at a slight, near imperceptible cost to your shareholders dividends! ","im just talkin"
+
+
+]
+
+
 // scenario 1
 
 let img_select = 0;
@@ -83,13 +93,20 @@ $laptop.on("mouseenter", function() {
 $laptop.on("mouseleave", function() {
     $(this).css("filter", "brightness(1)");
 });
+
+let number_scenario = 0;
+let evil_choice = 0;
+
 function laptop_clicked(){
     update_office_screen();
-    generate_email(choices[0],choice_value[0], scenario[0]);
-    $("#email_text").html(scenario[0])
+    generate_email(choices[number_scenario],choice_value[number_scenario], scenario[number_scenario]);
+    //$("#email_text").html(scenario[number_scenario]);
+    $("#end_day_button").css("pointer-events", "none");
+    $("#end_day_button").css("opacity", "0%");
+    $(".draggable button").css("filter", "brightness(1)");
+    evil_choice = 0;
 
 }
-
 
 
 
@@ -106,27 +123,50 @@ function generate_email(choices_array, choices_value_array, scenario_text){
     new_choices += "<br>Secound choice: " + choices_array[1];
     new_choices += "<br>Third choice: " + choices_array[2];
     $("#choice_window_text").html(new_choices)
-
+    $("#email_text").html(scenario[number_scenario]);
+    
 };
 
-$("#choice_1").on("click", function(){
-    evil_score += choice_value[0][0];
-    setEvilMeter(evil_score);
-    $("#email_text_container").css("opacity", 0);
-    $("#email_window").css("backgroundImage", 'url("art_assets/popups/angrystock.png")');
 
+$("#choice_1").on("click", function(){
+    $(".draggable button").css("filter", "brightness(1)");
+    $(this).css("filter", "brightness(0.5)");
+    evil_choice = choice_value[number_scenario][0];
+   // setEvilMeter(evil_score);
+    $("#end_day_button").css("pointer-events", "auto");
+    $("#end_day_button").css("opacity", "100%");
+    
 });
 $("#choice_2").on("click", function(){
-    evil_score += choice_value[0][1];
-   setEvilMeter(evil_score);
-
+    $(".draggable button").css("filter", "brightness(1)");
+    $(this).css("filter", "brightness(0.5)");
+    
+    
+    evil_choice = choice_value[number_scenario][1];
+   // setEvilMeter(evil_score);
+    $("#end_day_button").css("pointer-events", "auto");
+    $("#end_day_button").css("opacity", "100%");
+    
 });
 $("#choice_3").on("click", function(){
-    evil_score += 10;
-setEvilMeter(evil_score);
-
+    $(".draggable button").css("filter", "brightness(1)");
+    $(this).css("filter", "brightness(0.5)");
+    
+    evil_choice = 20;//choice_value[number_scenario][2];
+    //setEvilMeter(evil_score);
+    
+    $("#end_day_button").css("pointer-events", "auto");
+    $("#end_day_button").css("opacity", "100%");
 });
 
+$("#end_day_button").on("click", function(){
+    //fade screen
+    $(".desktop").css("opacity", 0);
+    $(".desktop").css("pointer-events", "none");  
+    evil_score += evil_choice;
+    setEvilMeter(evil_score);
+    number_scenario++;
+});
 
 function generate_graphs(){
     //take in evil amount, and growth,
@@ -241,7 +281,7 @@ function enableFreeDrag(el) {
 // Apply to all draggables
 document.querySelectorAll(".draggable").forEach(enableFreeDrag);
 
-
+////
 function setEvilMeter(value) {
     // value: integer from 0 to 100
     const fill = document.getElementById("evil-meter-fill");
