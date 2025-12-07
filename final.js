@@ -107,7 +107,7 @@ const choice_value = [
 
 
 
-const scenario = ["\
+let  OG_scenario = ["\
     \
     Rumors of a strike among the [COMPANY NAME] factory worker’s union are circulating. Granting the union their wishes may help boost company morale as well as the overall health, wellbeing,\
     and happiness of all you workers, but at a slight, near imperceptible cost to your shareholders dividends! "
@@ -141,15 +141,33 @@ const scenario = ["\
     ,//14
     "You decided to invest in the lucrative flavored air market after polluting the atmosphere so much. You decided to import air from the most logical and luscious place to get fresh clean air cleaned by nature already: the Himalayas. Unfortunately they don’t like the fact that we’re flattening part of Mount Everest in order to build our air sucking factory. There’s also propaganda online saying that our factories kill a ton of locals from pollution, but they’re falsely attributing it to Yetis instead of people!"
     ,//15
+    
+    
 
 
-
-
-
+    
 ]
 
+let user_name = "";
+let company_name = "";
+let scenario = [];
+//myucode
+$("#submit_name").on("click",function(){
+    if(($("#name_input").val() != "") && ($("#company_input").val() != "")){
+        user_name = $("#name_input").val() ;
+        company_name = $("#company_input").val();
+        $("#the_will").remove();
+        scenario = replaceCompanyName(OG_scenario, company_name)
 
-// scenario 1
+    }
+});
+//
+
+function replaceCompanyName(arr, companyName) {
+    return arr.map(str =>
+        str.replace(/\[COMPANY NAME\]/g, companyName)
+    );
+}
 
 let img_select = 0;
 function update_office_screen(){
@@ -200,14 +218,12 @@ function laptop_clicked(){
     update_office_screen();
     generate_email(choices[number_scenario],choice_value[number_scenario], scenario[number_scenario]);
     //$("#email_text").html(scenario[number_scenario]);
-    $("#end_day_button").css("pointer-events", "none");
-    $("#end_day_button").css("opacity", "0%");
+    $("#end_day_image").css("pointer-events", "none");
+    $("#end_day_image").css("opacity", "0%");
     $(".draggable button").css("filter", "brightness(1)");
     evil_choice = 0;
-
+    
 }
-
-
 
 
 
@@ -227,13 +243,14 @@ function generate_email(choices_array, choices_value_array, scenario_text){
 };
 
 
+
 $("#choice_1").on("click", function(){
     $(".draggable button").css("filter", "brightness(1)");
     $(this).css("filter", "brightness(0.5)");
     evil_choice = choice_value[number_scenario][0];
-   // setEvilMeter(evil_score);
-    $("#end_day_button").css("pointer-events", "auto");
-    $("#end_day_button").css("opacity", "100%");
+    // setEvilMeter(evil_score);
+    $("#end_day_image").css("pointer-events", "auto");
+    $("#end_day_image").css("opacity", "100%");
     
 });
 $("#choice_2").on("click", function(){
@@ -242,9 +259,9 @@ $("#choice_2").on("click", function(){
     
     
     evil_choice = choice_value[number_scenario][1];
-   // setEvilMeter(evil_score);
-    $("#end_day_button").css("pointer-events", "auto");
-    $("#end_day_button").css("opacity", "100%");
+    // setEvilMeter(evil_score);
+    $("#end_day_image").css("pointer-events", "auto");
+    $("#end_day_image").css("opacity", "100%");
     
 });
 $("#choice_3").on("click", function(){
@@ -254,11 +271,11 @@ $("#choice_3").on("click", function(){
     evil_choice = choice_value[number_scenario][2];
     //setEvilMeter(evil_score);
     
-    $("#end_day_button").css("pointer-events", "auto");
-    $("#end_day_button").css("opacity", "100%");
+    $("#end_day_image").css("pointer-events", "auto");
+    $("#end_day_image").css("opacity", "100%");
 });
 
-$("#end_day_button").on("click", function(){
+$("#end_day_image").on("click", function(){
     //fade screen
     $(".desktop").css("opacity", 0);
     $(".desktop").css("pointer-events", "none");  
@@ -267,20 +284,27 @@ $("#end_day_button").on("click", function(){
     number_scenario++;
 });
 
-function generate_graphs(){
-    //take in evil amount, and growth,
-    //divide it and change it around using arbutary numbers
-}
+//$laptop.on("dblclick", function(){laptop_clicked();});
+
+$("#end_day_image").on("mouseenter", function() {
+    $(this).css("filter", "brightness(0.5)");
+});
+
+$("#end_day_image").on("mouseleave", function() {
+    $(this).css("filter", "brightness(1)");
+});
+
+
 $email.on("mousedown",function(){
     $(this).css("z-index", 11);
     $response.css("z-index", 10);
-
+    
 });
 
 $email.on("click",function(){
     $(this).css("z-index", 11);
     $response.css("z-index", 10);
-
+    
 });
 $response.on("click", function(){
     $(this).css("z-index", 11);
@@ -314,36 +338,24 @@ function setVolume(name, value) {
 $("#musicSlider").on("input", function () {
     setVolume("bg_music", $(this).val());
 });
-
+/*
 $("#background_ac_slider").on("input", function () {
     setVolume("ac_noise", $(this).val());
 });
-
+*/
 //preload audio
 let bg_music = new Audio("audio_assets/EvilCEO.wav");
 bg_music.loop = true;
 bg_music.preload = "auto";
 bg_music.load;
 
+/*
 let ac_noise = new Audio("need to download a ac noise to play");
 ac_noise.loop = true;
 ac_noise.preload = "auto";
 ac_noise.load;
+*/
 
-
-let user_name = "";
-let company_name = "";
-
-//myucode
-$("#submit_name").on("click",function(){
-    if(($("#name_input").val() != "") && ($("#company_input").val() != "")){
-        user_name = $("#name_input").val() ;
-        company_name = $("#company_input").val();
-        $("#the_will").remove();
-
-    }
-});
-//
 
 
 
@@ -385,7 +397,7 @@ function setEvilMeter(value) {
     // value: integer from 0 to 100
     const fill = document.getElementById("evil-meter-fill");
     fill.style.height = Math.min(Math.max(value, 0), 100) + "%";
-    $("#evil-meter-label").text(Math.min(Math.max(value, 0), 100) + "%")
+    //$("#evil-meter-label").text(Math.min(Math.max(value, 0), 100) + "%")
 }
 
 // Example usage:
