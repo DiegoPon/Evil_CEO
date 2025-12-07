@@ -9,12 +9,21 @@ body {
 }
 
 #outer_layer {
-        width: 1280px;
-        height: 800px;
-        background: rgb(33, 147, 133); /* Change this color if needed */
-        position: relative;
+    width: 1280px;
+    height: 800px;
+    /*background: rgb(33, 147, 133); /* Change this color if needed */
+    position: relative;
+    /*background-image: url("./art_assets/office_background/Office_computer-05.png");*/
 }
 
+#office_background_layer{
+     width: 1280px;
+        height: 800px;
+        /*background: rgb(33, 147, 133); /* Change this color if needed */
+        position: absolute;
+        background-image: url("./art_assets/office_background/Office_computer-05.png");
+    z-index: 2;
+}
 /* Title screen stuff */
 .title_screen{
     background-color: chartreuse;
@@ -25,13 +34,13 @@ body {
     
     width: 1280px;
     height: 800px;    
-    z-index: 3;
+    z-index: 4;
     pointer-events: auto;
     position: absolute;
 }
 
 #start_button{
-    z-index: 4;
+    z-index: 5;
     width: 5%;
     opacity: 30%;
     position: absolute;
@@ -46,7 +55,7 @@ body {
     height: 800px;
     pointer-events: auto;
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     color: black;
     background-color: rgba(0,0,0,0.5);
     
@@ -55,19 +64,25 @@ body {
 #paper{
     position: absolute;
     z-index: 2;
-    height: 700px;
-    width: 700px;
+    height: 800px;
+    width: 750px;
     left: 15%;
-    top:5%;
-    background-color: white;    
+    top:0%;
+    background-image: url("./art_assets/popups/wordnewest.png");    
+    background-size: 100% 100%;
 }
 
 #paper p{   
-    padding: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-top: 71px;
+    padding-left: 71px;
+    padding-right: 66px;
     
 }
+
+#prompts{
+    padding-left: 71px;
+}
+
 
 .office div{
     z-index: 1;
@@ -95,9 +110,9 @@ body {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position: absolute;
-    left: 15%;
+    left: 6%;
     top:10%;
-    width: 950px;
+    width: 1109px;
     height: 550px;
      /* old values and stuff  
       width: 1152px;
@@ -110,12 +125,12 @@ body {
     background-color: blue;
     background-image: url("art_assets/screens/laptopscreen.jpg");
     background-size: contain;
-
     position: absolute;
-    left: 53%;
-    top:30%;
-    width: 400px;
+    left: 50.9%;
+    top:35%;
+    width: 393px;
     height: 240px;
+    z-index: 2;
 
 }
 
@@ -149,7 +164,7 @@ body {
     background-color: transparent;
     width: 750px;
     height: 440px;
-    background-image: url("./art_assets/popups/inbox.png");
+    background-image: url("./art_assets/popups/inbox_2.png");
     background-size: 100% 100%;
 
 }
@@ -170,8 +185,9 @@ body {
   src: url("/art_assets/CascadiaCode-VariableFont_wght.ttf") format('ttf');
   font-weight: normal;
   font-style: normal;
-
 }
+
+
 
 #email_text_container p {
     padding: 10px;

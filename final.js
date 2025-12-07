@@ -18,33 +18,132 @@ const images = [
     "art_assets/office_background/Window4.png",
     "art_assets/office_background/Window5.png",
     "art_assets/office_background/Window6.png",
-    "../environ/jimbo.png",
-    "../environ/there.jpg",
-    ""
+    
 ];
 
 const choices = [ 
-    //scenario 1
+    //                                          scenario 1
     ["Grant the wishes of the union, upset your shareholders.","Ignore the union, they will \
         come crawling back soon enough.","arrange for the union president’s dog to “accidentally”\
-         get hit by a car. No strike today!"],
-
+         get hit by a car. No strike today!"]
+    , // 1
     ["choice4","choice5","choice6"]
+    ,//2
+    ["choice4","choice5","choice6"]
+    ,//3
+    ["choice4","choice5","choice6"]
+    ,//4
+    ["choice4","choice5","choice6"]
+    ,//5
+    ["choice4","choice5","choice6"]
+    ,//6
+    ["choice4","choice5","choice6"]
+    ,//7
+    ["choice4","choice5","choice6"]
+    ,//8
+    ["choice4","choice5","choice6"]
+    ,//9
+    ["choice4","choice5","choice6"]
+    ,//10
+    ["choice4","choice5","choice6"]
+    ,//11
+    ["choice4","choice5","choice6"]
+    ,//12
+    ["choice4","choice5","choice6"]
+    ,//13
+    ["choice4","choice5","choice6"]
+    ,//14
+    ["choice4","choice5","choice6"]
+    ,//15
+    ["choice4","choice5","choice6"]
+    ,//16
+    ["choice4","choice5","choice6"]
+    ,//17
+    ["choice4","choice5","choice6"]
+    ,//18
+    
+
+
 ];
 
 const choice_value = [ 
-    [-3,3,7],
-     [1,2,4],
-     [0,1,3]
+    [-3,3,7]
+    ,//1
+    [1,2,4]
+    ,//2
+    [0,1,3]
+    ,//3
+    [0,1,3]
+    ,//4
+    [0,1,3]
+    ,//5
+    [0,1,3]
+    ,//6
+    [0,1,3]
+    ,//7
+    [0,1,3]
+    ,//8
+    [0,1,3]
+    ,//9
+    [0,1,3]
+    ,//10
+    [0,1,3]
+    ,//11
+    [0,1,3]
+    ,//12
+    [0,1,3]
+    ,//13
+    [0,1,3]
+    ,//3
+    [0,1,3]
+    ,//14
+    [0,1,3]
+    ,//15
+    [0,1,3]
+    ,//16
+
+
 ];
 
 
 
 const scenario = ["\
     \
-    Rumors of a strike among the company factory worker’s union are circulating. \
-    Granting the union their wishes may help boost company morale as well as the overall health, wellbeing, \
-    and happiness of all you workers, but at a slight, near imperceptible cost to your shareholders dividends! ","im just talkin"
+    Rumors of a strike among the [COMPANY NAME] factory worker’s union are circulating. Granting the union their wishes may help boost company morale as well as the overall health, wellbeing,\
+    and happiness of all you workers, but at a slight, near imperceptible cost to your shareholders dividends! "
+    ,// scenario 1 
+    "The FDA has issued a formal cease and desist to [COMPANY NAME] in regards to your newest product,  high strength barbiturates designed to taste and resemble gummy snacks a child might eat. \
+    They have ordered the complete and total recall on all of these products, which will affect [COMPANY NAME]’s profit margins greatly." 
+    , //2
+    "The CIA has contracted your company to help destabilize a paramilitary group rebelling against the foreign dictator installed via a joint operation between the US government and the fruit company responsible for providing the majority of [COMPANY NAME]’s produce."
+    , //3 
+    "You’ve been contracted to build a bridge across a valley that connects Viltown with Townville. We’ve already scouted the cheapest possible area to build a bridge, but we’ll need to cut down a huge part of the state’s national park! What should we do?"
+    ,//4
+    " A crowd of protesters have pooled outside your company building because  your destroying the ocean! They especially hate that you blocked the entire Thermohaline circulation in order to improve the air conditioning aboard your double decker submarine yacht! We don’t understand why they’re mad. We paid off the right groups to make sure we’re not breaking the law, but they’re still mad at us! What should we do?"
+    ,//5
+    "You illegally reinforce your company buildings with armed robot militias in order to guard your company from a large ravenous army of criminals. An army composed of big ol’ meanie heads online that make fun of you and your stockholders! The government wants you to get rid of the guards because they take too many oil baths and electric shock massages which hurt the energy grid."
+    ,//6
+    "Activists have made a documentary revealing that your company’s chocolates have been outsourced to  <span class='chromatic_text'> cheap puppy prison camps!</span> They reported that our facilities have an alarmingly high death rate because the dogs sometimes eat the yummy cocoa beans they pick with their mouths. What should we do?"
+    ,//7
+    "The American League of Concerned Dog Moms have made their displeasure with your newest product (cheap canned meats made by recycling the bodies of dogs, cats, and other such family pets put down at kill shelters and veterinary hospitals) known by staging a protest outside the factories responsible for processing the animals into delicious and debatably nutritious products for consumer enjoyment. Their actions are greatly affecting the productivity of these factories and by consequence the bottom line of your shareholders."
+    ,//8
+    "Some of the compounds comprising [COMPANY NAME] brand energy pills have been linked to the development of a new and hyper-malignant type of cancer with a near 100% mortality rate. While your company faces no legal repercussions due to your extensive connections with the FDA, concerns are being raised among consumers as to the safety of your product."
+    ,//9
+    "Putting the employee break room directly above the ventilation system of your toxic gas and poison factory has caused some unforeseen health complications leading to a litany of lawsuits from your subordinates and threats of investigation from both OSHA and the Department of Public Health. "
+    ,//10
+    "Your employees are complaining about the hostile architecture you’ve placed around the workspace. You put it in to make the workspace more fun and dynamic, but employees keep saying that they don’t want to deal with   booby traps and bossfights before getting to work. They also hate the anti bathroom break architecture that you installed to stop them from taking breaks. What should you do?"
+    ,//11
+    "We’ve made a breakthrough update to one of our social media apps in order to increase our app’s revenue by 0.03%. By using spectral vortex technology we’re able to drain 1% of our user’s soul for every hour they spend on our site! This rate of extraction increases by 500% if the content the user watches was produced by our AI A.P.E. typewriters which specialize in attracting the most mentally vulnerable to our trap. Unfortunately a ton of people are demanding that we return their loved one’s souls. They’re apparently very angry as a disproportionate amount of the souls extracted are elderly due to their frail souls. What do we do?"
+    ,//12
+    "[COMPANY NAME] is hemorrhaging profits due to an unresolved conflict amongst your R&D department’s top engineers. Half of the staff, after analyzing market trends, have noticed a desire among consumers for an envelope  preloaded with forsoman termites that one may mail to an enemy’s place of residence. The other half of the staff, raising ethical concerns and fears that they themselves may be targeted with [COMPANY NAME] Brand Termite Envelopes, have attempted to bar the development of this project. They have instead suggested pivoting the company’s production towards the development of more animal shelters and food banks."
+    ,//13
+    "A council meeting has been called in the city where [COMPANY NAME]’s most productive industrial sector is located in regards to how the company’s policy of dumping hazardous chemical waste into nearby lakes and streams may be affecting the quality of life of those living within a 200 mile radius of the production plants. Environmentalists are claiming that toxic chemicals are leaching into the local aquifer and the resulting mass poisoning of the city’s population has caused mutations amongst the townsfolk."
+    ,//14
+    "You decided to invest in the lucrative flavored air market after polluting the atmosphere so much. You decided to import air from the most logical and luscious place to get fresh clean air cleaned by nature already: the Himalayas. Unfortunately they don’t like the fact that we’re flattening part of Mount Everest in order to build our air sucking factory. There’s also propaganda online saying that our factories kill a ton of locals from pollution, but they’re falsely attributing it to Yetis instead of people!"
+    ,//15
+
+
+
 
 
 ]
@@ -152,7 +251,7 @@ $("#choice_3").on("click", function(){
     $(".draggable button").css("filter", "brightness(1)");
     $(this).css("filter", "brightness(0.5)");
     
-    evil_choice = 20;//choice_value[number_scenario][2];
+    evil_choice = choice_value[number_scenario][2];
     //setEvilMeter(evil_score);
     
     $("#end_day_button").css("pointer-events", "auto");
@@ -221,7 +320,7 @@ $("#background_ac_slider").on("input", function () {
 });
 
 //preload audio
-let bg_music = new Audio("audio_assets/evilceo(maaaybeee).mp3");
+let bg_music = new Audio("audio_assets/EvilCEO.wav");
 bg_music.loop = true;
 bg_music.preload = "auto";
 bg_music.load;
@@ -286,6 +385,7 @@ function setEvilMeter(value) {
     // value: integer from 0 to 100
     const fill = document.getElementById("evil-meter-fill");
     fill.style.height = Math.min(Math.max(value, 0), 100) + "%";
+    $("#evil-meter-label").text(Math.min(Math.max(value, 0), 100) + "%")
 }
 
 // Example usage:
