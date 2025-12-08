@@ -194,6 +194,13 @@ body {
   font-style: normal;
 }
 
+.email-headline {
+    font-family: "fontfancy";
+    font-weight: 500;
+    font-size: 13.5pt;
+    display: block;
+    margin-bottom: 10px;
+}
 
 #email_text_container p {
     padding: 10px;
