@@ -182,18 +182,26 @@ body {
 
 @font-face{
   font-family: "fontfancy";
-  src: url("/art_assets/CascadiaCode-VariableFont_wght.ttf") format('ttf');
-  font-weight: normal;
+  src: url("art_assets/CascadiaCode-VariableFont_wght.ttf") format('truetype');
+  font-weight: 200 700;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: "longtxt";
+  src: url("art_assets/Arimo-VariableFont_wght.ttf") format('truetype');
+  font-weight: 400 700;
   font-style: normal;
 }
 
 
-
 #email_text_container p {
     padding: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
-    
+    padding-left: 50px;
+    padding-right: 10px;
+    color: #255946;
+    font-family: "longtxt";
+    font-weight: 500;
 }
 
 
@@ -209,23 +217,36 @@ body {
     background-repeat: no-repeat;
     position: absolute;
 }
+
 #choice_window_text_container{
     background-color: transparent;
     width:600px;
     height:150px;
-    color:rgba(36, 105, 166, 1);
+    color:#255946;
     top: 50%;
     left:12%;
     position: inherit;
-  
+    font-family: "longtxt";
+    font-weight: 400;
 }
+
+.choices{
+    font-family: "fontfancy";
+    font-weight: 500;
+}
+
 #choice_window button{
     z-index: inherit;
     position: absolute;
     width: 100px;
     height: 25px;
-    color: blueviolet;
+    background-color: #255946;
+    color: #ebf2f1;
     bottom: 10%;
+    font-family: "fontfancy", 'Courier New', Courier, monospace;
+    font-weight: 400;
+    border-radius: 10px;
+   
 
 }
 

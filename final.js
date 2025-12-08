@@ -234,9 +234,9 @@ function generate_email(choices_array, choices_value_array, scenario_text){
     $(".desktop").css("pointer-events", "auto");  
     $("#evil-meter-container").css("z-index",11)  
     //arrays are used to generate or replace text in designated div's
-    let new_choices = "First choice: " + choices_array[0];
-    new_choices += "<br>Secound choice: " + choices_array[1];
-    new_choices += "<br>Third choice: " + choices_array[2];
+    let new_choices = "<span class='choices'> First choice: </span>" + choices_array[0];
+    new_choices += "<br><span class='choices'>Secound choice: </span>" + choices_array[1];
+    new_choices += "<br><span class='choices'>Third choice: </span>" + choices_array[2];
     $("#choice_window_text").html(new_choices)
     $("#email_text").html(scenario[number_scenario]);
     
