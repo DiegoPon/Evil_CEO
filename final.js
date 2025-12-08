@@ -26,44 +26,99 @@ const choices = [
     ["Grant the wishes of the union, upset your shareholders.","Ignore the union, they will \
         come crawling back soon enough.","arrange for the union president’s dog to “accidentally”\
          get hit by a car. No strike today!"]
-    , // 1
-    ["choice4","choice5","choice6"]
-    ,//2
-    ["choice4","choice5","choice6"]
-    ,//3
-    ["choice4","choice5","choice6"]
-    ,//4
-    ["choice4","choice5","choice6"]
-    ,//5
-    ["choice4","choice5","choice6"]
-    ,//6
-    ["choice4","choice5","choice6"]
-    ,//7
-    ["choice4","choice5","choice6"]
-    ,//8
-    ["choice4","choice5","choice6"]
-    ,//9
-    ["choice4","choice5","choice6"]
-    ,//10
-    ["choice4","choice5","choice6"]
-    ,//11
-    ["choice4","choice5","choice6"]
-    ,//12
-    ["choice4","choice5","choice6"]
-    ,//13
-    ["choice4","choice5","choice6"]
-    ,//14
-    ["choice4","choice5","choice6"]
-    ,//15
-    ["choice4","choice5","choice6"]
-    ,//16
-    ["choice4","choice5","choice6"]
-    ,//17
-    ["choice4","choice5","choice6"]
-    ,//18
-    
-
-
+    , //                                        scenario 2
+    ["Discontinue the product and issue a complete recall on the product.","Ignore this warning.\
+         Pay off the FDA to let this one slide.","Plant these products in the homes of those responsible \
+         for investigating your company. Sell them to their kids when nobody is looking. No mercy."]
+    ,//                                         scenario 3
+    ["Allocate resources towards the production of advanced military technology to decimate the rebellion. \
+        Glory to the military industrial complex!","Make an infographic on [COMPANY NAME]’s social media \
+         pages denouncing the violence on both sides to save face for your company. Now don't you look like a saint!","Fund \
+         the paramilitary group and help liberate them from the grips of a fruit company dictatorship."]
+    ,//                                         scenario 4
+    ["Demolish them!","Build a single pillar to support the whole thing. It's not like people are going to use it anyway.","Relocate \
+        the bridge somewhere more accessible that's slightly more expensive. Preferably to a place where people will actually use it."]
+    ,//                                         scenario 5
+    ["Ignore them. It's not like they can unblock the gates holding back the conveyer belt anyways.","Apologize\
+         for blocking all the deep sea currents responsible for maintaining the environment. Then decommission \
+         your double decker yacht and cancel your company’s party aboard it.","Destroy them too!"]
+    ,//                                         scenario 6
+    ["Make a “generous donation” to government officials to switch the civilian energy grid from gas to [COMPANY NAME’s] \
+        Soular energy(yes soul-ar, not sol-ar). Maybe then they’ll stop complaining about power outages.","Shut down the data\
+         center and sell the building to the government. Hopefully they can convert it to something useful.\
+         accidentally swallow it or something.","I declare war"]
+    ,//                                         scenario 7
+    ["Apologize and hire actual workers from your home country like your political beneficiaries promised.","Detooth \
+         and de-taste-bud the dogs so they can’t enjoy chocolate anymore. So now they can’t blame us if they \
+         accidentally swallow it or something.","Invest a buttload of money into interdimensional time travel,\
+          flat earth theory, teleportation, quantum tunneling, fairies, and genetically modifying vibrating quantum \
+          frequency theory so that you can outsource the labor to the third dimension instead. You're opening up\
+           Pandora's box, as the spacetime continuum is destabilized every time you travel to the third dimension. \
+           But it may be cheaper than paying real workers."]
+    ,//                                          scenario 8
+    ["Covertly “handle” the protesters and recycle them into the product.","Run a media campaign rebranding the\
+         consumption of pets as “green” and “eco friendly!”","Halt production of this product and make public\
+          amends with the American League of Concerned Dog Moms"]
+    ,//                                         scenario 9
+    ["Remove the compound from the nutritional facts section of the label but not the product itself, then invest\
+         heavily in “Living with Cancer” self help books. Play both sides and bring economic glory to [COMPANY NAME]","\
+         Do not acknowledge the situation. If you don’t say anything then maybe nobody will notice.","Recall the product\
+          and donate the money into pharmaceutical research to undo the harm you have caused. You might lose a lot of money, \
+          but the PR shift will be historic."]
+    ,//                                         scenario 10
+    ["Deliberately damage the ventilation system and flood the break room with toxic gas. Dead men file no lawsuits.","Offer\
+         a complimentary pizza party and take the expenses from the branch’s annual bonus fund. Maybe they will appreciate\
+          the gesture and drop the lawsuits, water under the bridge and all that?","Relocate the company break room and offer \
+          a health benefits plan to those working for [COMPANY NAME]. The shareholders will not be pleased…"]
+    ,//                                         scenario 11
+    ["Sell them passes so they can skip the level  space and make it to the end in time. Then add an automatic hard mode to your\
+         workfloor to force people to buy your skips","Attempt to normalize it by forcing video game architecture\
+          into any building you can think of. Let's start by getting Congress to sign off on a build that turns\
+           the Abe Lincoln statue into a mecha boss that you need to fight every time you step foot into Washington.","Give up \
+           on the idea of video game architecture because everyone hates it beside you and your sick shareholders. Maybe also\
+           delete the funny fails compilation that you guys made before you get sued too.(+0 evil)"]
+    ,//                                         scenario 12
+    ["Make a statement saying that you’ve already sold the souls to Satan for profit, so we can’t give them back even if\
+         you wanted to.","Find the critics' locations and convert them into computer chimps so they could actually do \
+         something for a living instead of saying mean things to us like a loser!","Return all the souls still intact\
+          and pay Satan to convert the energy back into souls. Although you will need to sign off a shareholder’s soul to Satan’s garden in order to pay for it."]
+    ,//                                          scenario 13
+    ["Develop the Termite Envelopes, then, both to demonstrate the product to the broader consumer base \
+        as part of a new advertisement campaign and to make\ an example out of the uncooperative staff, mail them the \
+        envelopes and destroy their homes.","choice5Split development amongst both sects of the department. Fencesitter!","Shift\
+         development away from evil and towards animal shelters and food banks. It may not be popular among the current consumer market, but it's good for your soul."]
+    ,//                                           scenario 14
+    ["Start a carnival and parade the mutants you have created on an international tour to raise funds for the company. \
+        Let the people gawk!","Create an advertising campaign touting the benefits of neon green skin and third arms.\
+         Maybe the victims of your pollution will gain some self confidence? Hell, you could even bottle the toxic chemical \
+         water and sell it to the masses so they can have a taste of mutant life.","Find a responsible way to dispose of the\
+          chemical waste and invest company resources in a relief effort for the city."]
+    ,//                                           scenario 15
+    ["Clear up the misinformation and explain that you didn’t actually kill Bigfoot's cousin and that he actually sold you\
+         the rights to mount Everest which makes everything totally legal.","Lace the air you produce with hallucinogenic\
+          drugs so people wouldn’t notice all the yeti and human corpses nearby.","Tear down the factory and let the United\
+           Nations turn the remnants into a Yeti sanctuary that will bring high paying jobs to human locals."]
+    ,//                                           scenario 16
+    ["Invest in high strength hydrochloric acid barrels for the office so that the tourists may be discretely dissolved\
+         into a gelatinous goo without attracting local pests. And leave the yacht rock on, clearly it’s motivating staff \
+         to get their work done faster so they can leave the office!","Negotiate with the branch manager about maybe having\
+          a rotating playlist chart for the office so that all employees may feel represented in their workplace.","Fire the\
+          manager and implore law enforcement to investigate his conduct."]
+    ,//                                           scenario 17
+    ["This man is a disgusting, conniving, cruel, empathetic maniac. Fire Dave Davis. Like, actually fire him.\
+         Pay Satan to fire him in his pit of fire bbq restaurant and order it to go on doordash. You can’t let\
+          such a conning scumbag get close to you or your loved ones. Because if you keep your eye off of him\
+          for one SECOND then he’s going to take everything that you built.","You’ve had it up to here with Dave\
+           Davis’ antics and he needs to go. Use your interdimensional quantum technology in order to banish him\
+            to the first dimension for being such a flat and shallow narcissist. Maybe there he can finally find\
+             dipshits that tolerate him.","Let him off easy today. Go to his home and office again and flood all\
+              the toilets with pipe busting Mexican food. Maybe now he can finally take the hint that we all hate ‘em, right guys?"]
+    ,//                                           scenario 18
+    ["Send them to the moon first. They’ll be so enamored by the view that they’ll give up the lawsuit and join us","Tell\
+         the U.S. government that there's oil on the moon in order to get enough funding to sue and hire a hitman\
+          against the whistleblower.","Abandon our short sighted goals of colonizing the moon and make a more long\
+           term and realistic plan to colonize it instead. We’ll also prioritize moving scientists and other bright\
+            minds to study the moon first instead of shareholders seeking the ultimate tax loophole."]
 ];
 
 const choice_value = [ 
@@ -141,7 +196,13 @@ let  OG_scenario = ["\
     ,//14
     "You decided to invest in the lucrative flavored air market after polluting the atmosphere so much. You decided to import air from the most logical and luscious place to get fresh clean air cleaned by nature already: the Himalayas. Unfortunately they don’t like the fact that we’re flattening part of Mount Everest in order to build our air sucking factory. There’s also propaganda online saying that our factories kill a ton of locals from pollution, but they’re falsely attributing it to Yetis instead of people!"
     ,//15
-    
+    " Low level lackeys at [COMPANY NAME]’s Honolulu office are making serious allegations against the branch manager in regards to the conduct of his personal life. They claim he lures tourists into his office for fun, and those tourists are often later seen in the company dumpsters with holes drilled into their heads, among other abnormalities. The dumpsters are starting to attract wildlife who are both rummaging through the garbage, attracted by the scent of decomposing tourists, and are menacing at employees. Staff has also been alleging that he subjects the office to his yacht rock playlist over the loud speaker, disrupting their workflow. This manager, however, has overseen the single greatest per capita profit increase in company history."
+    , //16
+    " Hello, [Char name], [company name] stock has just increased by 5.80 today, netting a total profit of $5,000,000 for you and your stockholders. A slight improvement from the $4,555,555 dollars you made yesterday boss. At this rate we can hold market dominance for another 50 years. <br>Sincerely <br> Dave Davis, finance director at [COMPANY NAME]"
+    , //17
+    "A whistleblower revealed that your company is planning to move its headquarters to the moon. No really, we’re moving the entire North American plate to the moon. That way we don’t have to worry about terraforming or building habitable structures to live in. So we gotta find a way to shut them up.",
+    //18
+
     
 
 
