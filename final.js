@@ -160,7 +160,7 @@ const choice_value = [
 
     //maximum 59 points
 ];
-const maximum_evil = 59;
+const maximum_evil = 50;
 
 
 const  OG_scenario = ["\
