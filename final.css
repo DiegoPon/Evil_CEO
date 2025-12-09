@@ -334,8 +334,35 @@ button{
 }
 
 /* setting erm i actually never made this so repurposed to be ending*/
-.merp{
+
+
+#good_ending{
     opacity: 0%;
+    width: 1280px;
+    height: 800px;
+    position: absolute;
+}
+
+#neutral_ending{
+    opacity: 0%;
+    width: 1280px;
+    height: 800px;
+    position: absolute;
+}
+
+#evil_ending{
+    opacity: 0%;
+    width: 1280px;
+    height: 800px;
+    position: absolute;
+}
+
+
+
+
+
+.merp{
+    opacity: 100%;
     position: absolute;
     width: 1280px;
     height: 800px;
@@ -352,7 +379,23 @@ button{
     height: 800px;
 }
 
+#Gt{
+    left:0%;
+    top: 0%;
+    position: absolute;
+}
 
+#Nt{
+    left: 0%;
+    top: 0%;
+    position: absolute;
+}
+
+#Et{
+    left: 0%;
+    top: 0%;
+    position: absolute;
+}
 
 /*erm*/
 #evil-meter-container {

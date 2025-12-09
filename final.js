@@ -225,8 +225,21 @@ $("#submit_name").on("click",function(){
         choices = replaceCompanyNameNested(OG_choices, company_name);
         choices = replaceUserNameNested(choices , user_name)
     }
+    
+    Gtext = Gtext.replace(/\[COMPANY NAME\]/g, company_name);
+    $("#Gt").html(Gtext);
+    Ntext = Ntext.replace(/\[COMPANY NAME\]/g, company_name);
+    $("#Nt").html(Ntext);
+    Etext = Etext.replace(/\[COMPANY NAME\]/g, company_name);
+    $("#Et").html(Etext);
 });
 //
+
+var Gtext = $("#Gt").text();
+var Ntext = $("#Nt").text();
+var Etext = $("#Et").text();
+
+
 
 function replaceCompanyName(arr, companyName) {
     return arr.map(str =>
@@ -439,15 +452,15 @@ $("#end_day_image").on("click", function(){
     if(number_scenario >= OG_scenario.length){//ending time
         if(evil_score < (maximum_evil)/4 ){
             $(".super_secret_ending_dont_peek_i_can_see_you_in_the_html_stop_reading_this").css("z-index", 999999);
-            $("#good").css("opacity","100%");
+            $("#good_ending").css("opacity","100%");
         }
         else if(evil_score < ((maximum_evil)/2) + (maximum_evil)/3){
             $(".super_secret_ending_dont_peek_i_can_see_you_in_the_html_stop_reading_this").css("z-index", 999999);
-            $("#neutral").css("opacity","100%");
+            $("#neutral_ending").css("opacity","100%");
         }
         else{
             $(".super_secret_ending_dont_peek_i_can_see_you_in_the_html_stop_reading_this").css("z-index", 999999);
-            $("#merp").css("opacity","100%");
+            $("#evil_ending").css("opacity","100%");
         }
         
         $(".desktop").css("opacity", 0);
