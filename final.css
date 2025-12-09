@@ -27,7 +27,7 @@ body {
 /* Title screen stuff */
 .title_screen{
     background-color: chartreuse;
-    background-image: url("art_assets/temp_title.jpg");
+    background-image: url("art_assets/home.png");
     background-position: center;
     background-repeat:space;
     background-size:100% 100%;
@@ -41,11 +41,11 @@ body {
 
 #start_button{
     z-index: 5;
-    width: 5%;
-    opacity: 30%;
+    width: 20%;
+    opacity: 100%;
     position: absolute;
-    left: 45%;
-    top: 50%;
+    left: 37%;
+    top: 40%;
 }
 
 /*office/vacation area */
