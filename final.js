@@ -21,7 +21,7 @@ const images = [
     
 ];
 
-const choices = [ 
+const OG_choices = [ 
     //                                          scenario 1
     ["Grant the wishes of the union, upset your shareholders.","Ignore the union, they will \
         come crawling back soon enough.","arrange for the union president’s dog to “accidentally”\
@@ -42,19 +42,19 @@ const choices = [
     ["Ignore them. It's not like they can unblock the gates holding back the conveyer belt anyways.","Apologize\
          for blocking all the deep sea currents responsible for maintaining the environment. Then decommission \
          your double decker yacht and cancel your company’s party aboard it.","Destroy them too!"]
-    ,//                                         scenario 6
-    ["Make a “generous donation” to government officials to switch the civilian energy grid from gas to [COMPANY NAME’s] \
+        ,//                                         scenario 6
+    ["Make a “generous donation” to government officials to switch the civilian energy grid from gas to [COMPANY NAME]'s \
         Soular energy(yes soul-ar, not sol-ar). Maybe then they’ll stop complaining about power outages.","Shut down the data\
          center and sell the building to the government. Hopefully they can convert it to something useful.\
          accidentally swallow it or something.","I declare war"]
     ,//                                         scenario 7
     ["Apologize and hire actual workers from your home country like your political beneficiaries promised.","Detooth \
          and de-taste-bud the dogs so they can’t enjoy chocolate anymore. So now they can’t blame us if they \
-         accidentally swallow it or something.","Invest a buttload of money into interdimensional time travel,\
+            accidentally swallow it or something.","<span style='font-size: 8px;' > Invest a buttload of money into interdimensional time travel,\
           flat earth theory, teleportation, quantum tunneling, fairies, and genetically modifying vibrating quantum \
           frequency theory so that you can outsource the labor to the third dimension instead. You're opening up\
            Pandora's box, as the spacetime continuum is destabilized every time you travel to the third dimension. \
-           But it may be cheaper than paying real workers."]
+           But it may be cheaper than paying real workers.</span>"]
     ,//                                          scenario 8
     ["Covertly “handle” the protesters and recycle them into the product.","Run a media campaign rebranding the\
          consumption of pets as “green” and “eco friendly!”","Halt production of this product and make public\
@@ -76,14 +76,14 @@ const choices = [
           into any building you can think of. Let's start by getting Congress to sign off on a build that turns\
            the Abe Lincoln statue into a mecha boss that you need to fight every time you step foot into Washington.","Give up \
            on the idea of video game architecture because everyone hates it beside you and your sick shareholders. Maybe also\
-           delete the funny fails compilation that you guys made before you get sued too.(+0 evil)"]
+           delete the funny fails compilation that you guys made before you get sued too."]
     ,//                                         scenario 12
     ["Make a statement saying that you’ve already sold the souls to Satan for profit, so we can’t give them back even if\
          you wanted to.","Find the critics' locations and convert them into computer chimps so they could actually do \
          something for a living instead of saying mean things to us like a loser!","Return all the souls still intact\
           and pay Satan to convert the energy back into souls. Although you will need to sign off a shareholder’s soul to Satan’s garden in order to pay for it."]
     ,//                                          scenario 13
-    ["Develop the Termite Envelopes, then, both to demonstrate the product to the broader consumer base \
+    ["Develop the <span class='chromatic_text'>Termite Envelopes</span>, then, both to demonstrate the product to the broader consumer base \
         as part of a new advertisement campaign and to make\ an example out of the uncooperative staff, mail them the \
         envelopes and destroy their homes.","choice5Split development amongst both sects of the department. Fencesitter!","Shift\
          development away from evil and towards animal shelters and food banks. It may not be popular among the current consumer market, but it's good for your soul."]
@@ -106,7 +106,7 @@ const choices = [
           manager and implore law enforcement to investigate his conduct."]
     ,//                                           scenario 17
     ["This man is a disgusting, conniving, cruel, empathetic maniac. Fire Dave Davis. Like, actually fire him.\
-         Pay Satan to fire him in his pit of fire bbq restaurant and order it to go on doordash. You can’t let\
+         Pay <span class='chromatic_text'>Satan</span> to fire him in his pit of fire bbq restaurant and order it to go on doordash. You can’t let\
           such a conning scumbag get close to you or your loved ones. Because if you keep your eye off of him\
           for one SECOND then he’s going to take everything that you built.","You’ve had it up to here with Dave\
            Davis’ antics and he needs to go. Use your interdimensional quantum technology in order to banish him\
@@ -198,7 +198,7 @@ let  OG_scenario = ["\
     ,//15
     "<span class='email-headline'>Subject: Honolulu’s branch manager situation</span>Low level lackeys at [COMPANY NAME]’s Honolulu office are making serious allegations against the branch manager in regards to the conduct of his personal life. They claim he lures tourists into his office for fun, and those tourists are often later seen in the company dumpsters with holes drilled into their heads, among other abnormalities. The dumpsters are starting to attract wildlife who are both rummaging through the garbage, attracted by the scent of decomposing tourists, and are menacing at employees. Staff has also been alleging that he subjects the office to his yacht rock playlist over the loud speaker, disrupting their workflow. This manager, however, has overseen the single greatest per capita profit increase in company history."
     , //16
-    "<span class='email-headline'>Fwd: Stock Update</span>Hello, [Char name], [company name] stock has just increased by 5.80 today, netting a total profit of $5,000,000 for you and your stockholders. A slight improvement from the $4,555,555 dollars you made yesterday boss. At this rate we can hold market dominance for another 50 years. <br>Sincerely <br> Dave Davis, finance director at [COMPANY NAME]"
+    "<span class='email-headline'>Fwd: Stock Update</span>Hello, [CHAR NAME], [COMPANY NAME] stock has just increased by 5.80 today, netting a total profit of $5,000,000 for you and your stockholders. A slight improvement from the $4,555,555 dollars you made yesterday boss. At this rate we can hold market dominance for another 50 years. <br>Sincerely <br> Dave Davis, finance director at [COMPANY NAME]"
     , //17
     "<span class='email-headline'>Subject: Urgent: Leak About the Lunar Headquarters Plan</span>A whistleblower revealed that your company is planning to move its headquarters to the moon. No really, we’re moving the entire North American plate to the moon. That way we don’t have to worry about terraforming or building habitable structures to live in. So we gotta find a way to shut them up.",
     //18
@@ -209,17 +209,19 @@ let  OG_scenario = ["\
     
 ]
 
-let user_name = "";
+var user_name = "";
 let company_name = "";
 let scenario = [];
+var choices = [[]];
 //myucode
 $("#submit_name").on("click",function(){
     if(($("#name_input").val() != "") && ($("#company_input").val() != "")){
         user_name = $("#name_input").val() ;
         company_name = $("#company_input").val();
         $("#the_will").remove();
-        scenario = replaceCompanyName(OG_scenario, company_name)
-
+        scenario = replaceCompanyName(OG_scenario, company_name);
+        choices = replaceCompanyNameNested(OG_choices, company_name);
+        choices = replaceUserNameNested(choices , user_name)
     }
 });
 //
@@ -229,6 +231,24 @@ function replaceCompanyName(arr, companyName) {
         str.replace(/\[COMPANY NAME\]/g, companyName)
     );
 }
+
+function replaceCompanyNameNested(arr, companyName) {
+    return arr.map(innerArray =>
+        innerArray.map(str =>
+            str.replace(/\[COMPANY NAME\]/g, companyName),
+        )
+    );
+}
+function replaceUserNameNested(arr, companyName) {
+    return arr.map(innerArray =>
+        innerArray.map(str =>
+            str.replace(/\[CHAR NAME\]/g, companyName)
+        )
+    );
+}
+
+
+
 
 let img_select = 0;
 function update_office_screen(){
