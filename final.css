@@ -155,6 +155,22 @@ body {
     background-repeat: no-repeat;
 }
 
+#happy{
+    pointer-events: none;
+    opacity: 0;
+    width: 1257px;
+    top:10%;
+    z-index: 21;
+    position: absolute;
+}
+
+#angry{
+    opacity: 0;
+    z-index: 21;
+    pointer-events: none;
+    width: 1132px;
+    position: absolute;
+}
 
 .windows{
  
@@ -180,6 +196,7 @@ body {
     /*background-color: chartreuse;*/
     position: absolute;
     z-index: inherit;
+    
 }
 
 
@@ -214,6 +231,14 @@ body {
     font-weight: 500;
 }
 
+#replybutton{
+    width: 150px;
+    position: absolute;
+    right: 3%;
+    bottom: 4%;
+
+}
+
 
 
 #choice_window{
@@ -226,6 +251,8 @@ body {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     position: absolute;
+    opacity: 0%;
+    pointer-events: none;
 }
 
 #choice_window_text_container{
@@ -259,6 +286,9 @@ body {
    
 
 }
+
+
+
 
 /*this is for the buttons to be "pressed in"*/
 .draggable button{
@@ -303,7 +333,26 @@ button{
     cursor:pointer;
 }
 
-/* setting */
+/* setting erm i actually never made this so repurposed to be ending*/
+.merp{
+    opacity: 0%;
+    position: absolute;
+    width: 1280px;
+    height: 800px;
+}
+
+
+
+.super_secret_ending_dont_peek_i_can_see_you_in_the_html_stop_reading_this{
+    /*defintily planned something*/
+    z-index: -111;
+    pointer-events: auto;
+    position: absolute;
+    width: 1280px;
+    height: 800px;
+}
+
+
 
 /*erm*/
 #evil-meter-container {

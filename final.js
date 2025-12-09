@@ -104,14 +104,14 @@ const OG_choices = [
           a rotating playlist chart for the office so that all employees may feel represented in their workplace.","Fire the\
           manager and implore law enforcement to investigate his conduct."]
     ,//                                           scenario 17
-    ["This man is a disgusting, conniving, cruel, empathetic maniac. Fire Dave Davis. Like, actually fire him.\
+    ["<div style='font-size:12px;'>This man is a disgusting, conniving, cruel, empathetic maniac. Fire Dave Davis. Like, actually fire him.\
          Pay <span class='chromatic_text'>Satan</span> to fire him in his <span class='chromatic_text'>pit of fire bbq restaurant</span> and order it to go on doordash. You can’t let\
           such a conning scumbag get close to you or your loved ones. Because if you keep your eye off of him\
           for one SECOND then he’s going to take everything that you built.","You’ve had it up to here with Dave\
            Davis’ antics and he needs to go. Use your interdimensional quantum technology in order to banish him\
             to the first dimension for being such a flat and shallow narcissist. Maybe there he can finally find\
              dipshits that tolerate him.","Let him off easy today. Go to his home and office again and flood all\
-              the toilets with pipe busting Mexican food. Maybe now he can finally take the hint that we all hate ‘em, right guys?"]
+              the toilets with pipe busting Mexican food. Maybe now he can finally take the hint that we all hate ‘em, right guys?</div>"]
     ,//                                           scenario 18
     ["Send them to the moon first. They’ll be so enamored by the view that they’ll give up the lawsuit and join us","Tell\
          the U.S. government that there's oil on the moon in order to get enough funding to sue and hire a hitman\
@@ -158,12 +158,12 @@ const choice_value = [
     [1,3,-2]
     ,//18
 
-
+    //maximum 59 points
 ];
+const maximum_evil = 59;
 
 
-
-let  OG_scenario = ["\
+const  OG_scenario = ["\
     \
     <span class='email-headline'>Subject: Workers are planning a strike</span> Rumors of a strike among the [COMPANY NAME] factory worker’s union are circulating. Granting the union their wishes may help boost company morale as well as the overall health, wellbeing,\
     and happiness of all you workers, but at a slight, near imperceptible cost to your shareholders dividends!"
@@ -221,6 +221,7 @@ $("#submit_name").on("click",function(){
         company_name = $("#company_input").val();
         $("#the_will").remove();
         scenario = replaceCompanyName(OG_scenario, company_name);
+        scenario = replaceUserName(scenario, user_name);
         choices = replaceCompanyNameNested(OG_choices, company_name);
         choices = replaceUserNameNested(choices , user_name)
     }
@@ -230,6 +231,11 @@ $("#submit_name").on("click",function(){
 function replaceCompanyName(arr, companyName) {
     return arr.map(str =>
         str.replace(/\[COMPANY NAME\]/g, companyName)
+    );
+}
+function replaceUserName(arr, companyName) {
+    return arr.map(str =>
+        str.replace(/\[CHAR NAME\]/g, companyName)
     );
 }
 
@@ -248,7 +254,9 @@ function replaceUserNameNested(arr, companyName) {
     );
 }
 
+function company_review(){
 
+}
 
 
 let img_select = 0;
@@ -293,8 +301,30 @@ $laptop.on("mouseleave", function() {
     $(this).css("filter", "brightness(1)");
 });
 
-let number_scenario = 0;
-let evil_choice = 0;
+$("#replybutton").on("mouseenter", function() {
+    $(this).css("filter", "brightness(0.5)");
+});
+
+$("#replybutton").on("mouseleave", function() {
+    $(this).css("filter", "brightness(1)");
+});
+$("#replybutton").on("click", function() {
+    
+    setTimeout(function () {
+        $response.css("z-index", 11);
+        $email.css("z-index", 10);
+        $response.css("opacity", 100);
+        $response.css("pointer-events", "auto");
+    
+    }, 100);
+
+});
+
+
+
+
+var number_scenario = 0;
+var evil_choice = 0;
 
 function laptop_clicked(){
     update_office_screen();
@@ -314,6 +344,8 @@ function laptop_clicked(){
 function generate_email(choices_array, choices_value_array, scenario_text){
     $(".desktop").css("opacity", 1);
     $(".desktop").css("pointer-events", "auto");  
+    $email.css("opacity", 100);
+    $email.css("pointer-events", "auto");
     $("#evil-meter-container").css("z-index",11)  
     //arrays are used to generate or replace text in designated div's
     let new_choices = "<span class='choices'> First choice: </span>" + choices_array[0];
@@ -357,13 +389,77 @@ $("#choice_3").on("click", function(){
     $("#end_day_image").css("opacity", "100%");
 });
 
+let oneThirdTriggered = false;
+let twoThirdTriggered = false;
+const oneThird = OG_scenario.length / 3;
+const twoThird = (2 * OG_scenario.length) / 3;
+
 $("#end_day_image").on("click", function(){
     //fade screen
-    $(".desktop").css("opacity", 0);
-    $(".desktop").css("pointer-events", "none");  
     evil_score += evil_choice;
     setEvilMeter(evil_score);
+    evil_choice = 0;
+    $email.css("opacity", 0);
+    $email.css("pointer-events", "none");
+    
+    $response.css("opacity", 0);
+    $response.css("pointer-events", "none");
+
+    if( !oneThirdTriggered && number_scenario >= oneThird){
+        oneThirdTriggered = true;
+        if((maximum_evil-2)/3 <= evil_score){
+            $("#happy").css("opacity", 100);
+            happy_cheer.play();
+            
+        }
+        else{
+            $("#angry").css("opacity", 100);
+            angry_gr.play();
+
+        }
+        return;
+    }
+    if( !twoThirdTriggered && number_scenario >= twoThird){
+        twoThirdTriggered = true;
+
+        if((2*(maximum_evil-2))/3 <= evil_score){
+            $("#happy").css("opacity", 100);
+            happy_cheer.play();
+            
+        }
+        else{
+            $("#angry").css("opacity", 100);
+            angry_gr.play();
+    
+        }
+        return;
+    }
     number_scenario++;
+
+    if(number_scenario >= OG_scenario.length){//ending time
+        if(evil_score < (maximum_evil)/4 ){
+            $(".super_secret_ending_dont_peek_i_can_see_you_in_the_html_stop_reading_this").css("z-index", 999999);
+            $("#good").css("opacity","100%");
+        }
+        else if(evil_score < ((maximum_evil)/2) + (maximum_evil)/3){
+            $(".super_secret_ending_dont_peek_i_can_see_you_in_the_html_stop_reading_this").css("z-index", 999999);
+            $("#meh").css("opacity","100%");
+        }
+        else{
+            $(".super_secret_ending_dont_peek_i_can_see_you_in_the_html_stop_reading_this").css("z-index", 999999);
+            $("#ihateu").css("opacity","100%");
+        }
+        
+        $(".desktop").css("opacity", 0);
+        $(".desktop").css("pointer-events", "none");  
+    }
+
+
+    $("#angry").css("opacity", 0);
+    $("#happy").css("opacity", 0);
+    $(".desktop").css("opacity", 0);
+    $(".desktop").css("pointer-events", "none");  
+    
 });
 
 //$laptop.on("dblclick", function(){laptop_clicked();});
@@ -393,7 +489,7 @@ $response.on("click", function(){
     $email.css("z-index", 10);
 
 });
-$response.on("mousedown", function(){
+$response.on("doubleclick", function(){
     $(this).css("z-index", 11);
     $email.css("z-index", 10);
 
@@ -426,10 +522,13 @@ $("#background_ac_slider").on("input", function () {
 });
 */
 //preload audio
-let bg_music = new Audio("audio_assets/EvilCEO.wav");
+let bg_music = new Audio("./audio_assets/EvilCEO.wav");
 bg_music.loop = true;
 bg_music.preload = "auto";
 bg_music.load;
+
+var happy_cheer = new Audio("./audio_assets/fnafyay.mp3");
+var angry_gr = new Audio("./audio_assets/angry-roblox.mp3");
 
 /*
 let ac_noise = new Audio("need to download a ac noise to play");
@@ -478,7 +577,7 @@ document.querySelectorAll(".draggable").forEach(enableFreeDrag);
 function setEvilMeter(value) {
     // value: integer from 0 to 100
     const fill = document.getElementById("evil-meter-fill");
-    fill.style.height = Math.min(Math.max(value, 0), 100) + "%";
+    fill.style.height = Math.min(Math.max(value, 0), maximum_evil) + "%";
     //$("#evil-meter-label").text(Math.min(Math.max(value, 0), 100) + "%")
 }
 
