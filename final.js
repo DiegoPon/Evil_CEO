@@ -443,11 +443,11 @@ $("#end_day_image").on("click", function(){
         }
         else if(evil_score < ((maximum_evil)/2) + (maximum_evil)/3){
             $(".super_secret_ending_dont_peek_i_can_see_you_in_the_html_stop_reading_this").css("z-index", 999999);
-            $("#meh").css("opacity","100%");
+            $("#neutral").css("opacity","100%");
         }
         else{
             $(".super_secret_ending_dont_peek_i_can_see_you_in_the_html_stop_reading_this").css("z-index", 999999);
-            $("#ihateu").css("opacity","100%");
+            $("#merp").css("opacity","100%");
         }
         
         $(".desktop").css("opacity", 0);
