@@ -437,3 +437,43 @@ button{
     bottom: -41%;
 }
 
+#Gt {
+    background-color: #074361;
+    padding: 20px;
+    color: white;
+    font-family: longtxt;
+    top: 79%;
+    -webkit-mask-image: radial-gradient(
+        circle at center,
+        black 70%,
+        transparent 100%
+    );
+}
+
+#Nt {
+    background-color: #074361;
+    padding: 20px;
+    color: white;
+    font-family: longtxt;
+    top: 79%;
+    -webkit-mask-image: radial-gradient(
+        circle at center,
+        black 90%,
+        transparent 100%
+    );
+}
+
+#Et {
+    background-color: #074361;
+    padding: 25px;
+    color: white;
+    font-family: longtxt;
+    top: 79%;
+    position: absolute;
+    z-index: 10;
+    -webkit-mask-image: radial-gradient(
+        circle at center,
+        black 90%,
+        transparent 100%
+    );
+}
