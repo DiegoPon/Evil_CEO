@@ -32,7 +32,7 @@ const OG_choices = [
          for investigating your company. Sell them to their kids when nobody is looking. No mercy."]
     ,//                                         scenario 3
     ["Allocate resources towards the production of advanced military technology to decimate the rebellion. \
-        Glory to the military industrial complex!","Make an infographic on [COMPANY NAME]’s social media \
+        Glory to the <span class='chromatic_text'>military industrial complex!</span>","Make an infographic on [COMPANY NAME]’s social media \
          pages denouncing the violence on both sides to save face for your company. Now don't you look like a saint!","Fund \
          the paramilitary group and help liberate them from the grips of a fruit company dictatorship."]
     ,//                                         scenario 4
@@ -51,8 +51,8 @@ const OG_choices = [
     ["Apologize and hire actual workers from your home country like your political beneficiaries promised.","Detooth \
          and de-taste-bud the dogs so they can’t enjoy chocolate anymore. So now they can’t blame us if they \
             accidentally swallow it or something.","<span style='font-size: 8px;' > Invest a buttload of money into interdimensional time travel,\
-          flat earth theory, teleportation, quantum tunneling, fairies, and genetically modifying vibrating quantum \
-          frequency theory so that you can outsource the labor to the third dimension instead. You're opening up\
+          flat earth theory, teleportation, quantum tunneling, fairies, and <span class='chromatic_text'>genetically modifying vibrating quantum \
+          frequency theory</span> so that you can outsource the labor to the third dimension instead. You're opening up\
            Pandora's box, as the spacetime continuum is destabilized every time you travel to the third dimension. \
            But it may be cheaper than paying real workers.</span>"]
     ,//                                          scenario 8
@@ -61,22 +61,21 @@ const OG_choices = [
           amends with the American League of Concerned Dog Moms"]
     ,//                                         scenario 9
     ["Remove the compound from the nutritional facts section of the label but not the product itself, then invest\
-         heavily in “Living with Cancer” self help books. Play both sides and bring economic glory to [COMPANY NAME]","\
+         heavily in <span class='chromatic_text'>“Living with Cancer”</span> self help books. Play both sides and bring economic glory to [COMPANY NAME]","\
          Do not acknowledge the situation. If you don’t say anything then maybe nobody will notice.","Recall the product\
           and donate the money into pharmaceutical research to undo the harm you have caused. You might lose a lot of money, \
           but the PR shift will be historic."]
     ,//                                         scenario 10
     ["Deliberately damage the ventilation system and flood the break room with toxic gas. Dead men file no lawsuits.","Offer\
-         a complimentary pizza party and take the expenses from the branch’s annual bonus fund. Maybe they will appreciate\
+         a <span class='chromatic_text'>complimentary pizza party</span> and take the expenses from the branch’s annual bonus fund. Maybe they will appreciate\
           the gesture and drop the lawsuits, water under the bridge and all that?","Relocate the company break room and offer \
           a health benefits plan to those working for [COMPANY NAME]. The shareholders will not be pleased…"]
     ,//                                         scenario 11
     ["Sell them passes so they can skip the level  space and make it to the end in time. Then add an automatic hard mode to your\
-         workfloor to force people to buy your skips","Attempt to normalize it by forcing video game architecture\
+         workfloor to force people to buy your skips","Attempt to normalize it by forcing <span class='chromatic_text'>video game architecture</span>\
           into any building you can think of. Let's start by getting Congress to sign off on a build that turns\
            the Abe Lincoln statue into a mecha boss that you need to fight every time you step foot into Washington.","Give up \
-           on the idea of video game architecture because everyone hates it beside you and your sick shareholders. Maybe also\
-           delete the funny fails compilation that you guys made before you get sued too."]
+           on the idea of <span class='chromatic_text'>video game architecture</span>."]
     ,//                                         scenario 12
     ["Make a statement saying that you’ve already sold the souls to Satan for profit, so we can’t give them back even if\
          you wanted to.","Find the critics' locations and convert them into computer chimps so they could actually do \
@@ -85,7 +84,7 @@ const OG_choices = [
     ,//                                          scenario 13
     ["Develop the <span class='chromatic_text'>Termite Envelopes</span>, then, both to demonstrate the product to the broader consumer base \
         as part of a new advertisement campaign and to make\ an example out of the uncooperative staff, mail them the \
-        envelopes and destroy their homes.","choice5Split development amongst both sects of the department. Fencesitter!","Shift\
+        envelopes and destroy their homes.","Split development amongst both sects of the department. Fencesitter!","Shift\
          development away from evil and towards animal shelters and food banks. It may not be popular among the current consumer market, but it's good for your soul."]
     ,//                                           scenario 14
     ["Start a carnival and parade the mutants you have created on an international tour to raise funds for the company. \
@@ -106,7 +105,7 @@ const OG_choices = [
           manager and implore law enforcement to investigate his conduct."]
     ,//                                           scenario 17
     ["This man is a disgusting, conniving, cruel, empathetic maniac. Fire Dave Davis. Like, actually fire him.\
-         Pay <span class='chromatic_text'>Satan</span> to fire him in his pit of fire bbq restaurant and order it to go on doordash. You can’t let\
+         Pay <span class='chromatic_text'>Satan</span> to fire him in his <span class='chromatic_text'>pit of fire bbq restaurant</span> and order it to go on doordash. You can’t let\
           such a conning scumbag get close to you or your loved ones. Because if you keep your eye off of him\
           for one SECOND then he’s going to take everything that you built.","You’ve had it up to here with Dave\
            Davis’ antics and he needs to go. Use your interdimensional quantum technology in order to banish him\
@@ -174,7 +173,7 @@ let  OG_scenario = ["\
     , //3 
     "<span class='email-headline'>Subject: Bridge matters</span>You’ve been contracted to build a bridge across a valley that connects Viltown with Townville. We’ve already scouted the cheapest possible area to build a bridge, but we’ll need to cut down a huge part of the state’s national park! What should we do?"
     ,//4
-    "<span class='email-headline'>Subject: Why are these people mad?!?</span> A crowd of protesters have pooled outside your company building because  your destroying the ocean! They especially hate that you blocked the entire Thermohaline circulation in order to improve the air conditioning aboard your double decker submarine yacht! We don’t understand why they’re mad. We paid off the right groups to make sure we’re not breaking the law, but they’re still mad at us! What should we do?"
+    "<span class='email-headline'>Subject: Why are these people mad?!?</span>  A crowd of protesters have pooled outside your company building because  you're destroying the ocean! They hate that you blocked the entire global conveyer belt in order to improve the air conditioning aboard your double decker submarine yacht! This is pretty bad for everyone since the conveyer belt is responsible for warming up all of Europe and for bringing rain to Australia and India. We don’t understand why they’re mad though. We paid off the right groups to make sure we’re not breaking the law, but they’re still angry! What should we do?"
     ,//5
     "<span class='email-headline'>Subject: About the Whole ‘Robot Army’ Thing…</span>You illegally reinforce your company buildings with armed robot militias in order to guard your company from a large ravenous army of criminals. An army composed of big ol’ meanie heads online that make fun of you and your stockholders! The government wants you to get rid of the guards because they take too many oil baths and electric shock massages which hurt the energy grid."
     ,//6
@@ -188,9 +187,9 @@ let  OG_scenario = ["\
     ,//10
     "<span class='email-headline'>Subject:  Skill issue</span>Your employees are complaining about the hostile architecture you’ve placed around the workspace. You put it in to make the workspace more fun and dynamic, but employees keep saying that they don’t want to deal with   booby traps and bossfights before getting to work. They also hate the anti bathroom break architecture that you installed to stop them from taking breaks. What should you do?"
     ,//11
-    "<span class='email-headline'>Subject: Souls are being compromised</span>We’ve made a breakthrough update to one of our social media apps in order to increase our app’s revenue by 0.03%. By using spectral vortex technology we’re able to drain 1% of our user’s soul for every hour they spend on our site! This rate of extraction increases by 500% if the content the user watches was produced by our AI A.P.E. typewriters which specialize in attracting the most mentally vulnerable to our trap. Unfortunately a ton of people are demanding that we return their loved one’s souls. They’re apparently very angry as a disproportionate amount of the souls extracted are elderly due to their frail souls. What do we do?"
+    "<span class='email-headline'>Subject: Souls are being compromised</span>We’ve made a breakthrough update to one of our social media apps in order to increase our app’s revenue by 0.03%. By using spectral vortex technology we’re able to drain 1% of our user’s soul for every hour they spend on our site! This rate of extraction increases by 500% if the content the user watches was produced by our <span class='chromatic_text'>lobotomized computer chimps</span>(yes chimps not chips) produced by congress. Unfortunately a ton of people are demanding that we return their loved one’s souls. They’re apparently very angry as a disproportionate amount of the souls extracted are elderly due to their frail souls. What do we do?"
     ,//12
-    "<span class='email-headline'>Subject: TermiteGate.</span>[COMPANY NAME] is hemorrhaging profits due to an unresolved conflict amongst your R&D department’s top engineers. Half of the staff, after analyzing market trends, have noticed a desire among consumers for an envelope  preloaded with forsoman termites that one may mail to an enemy’s place of residence. The other half of the staff, raising ethical concerns and fears that they themselves may be targeted with [COMPANY NAME] Brand Termite Envelopes, have attempted to bar the development of this project. They have instead suggested pivoting the company’s production towards the development of more animal shelters and food banks."
+    "<span class='email-headline'>Subject: TermiteGate.</span>[COMPANY NAME] is hemorrhaging profits due to an unresolved conflict amongst your R&D department’s top engineers. Half of the staff, after analyzing market trends, have noticed a desire among consumers for an envelope  preloaded with forsoman termites that one may mail to an enemy’s place of residence. The other half of the staff, raising ethical concerns and fears that they themselves may be targeted with <span class='chromatic_text'>[COMPANY NAME] Brand Termite Envelopes</span>, have attempted to bar the development of this project. They have instead suggested pivoting the company’s production towards the development of more animal shelters and food banks."
     ,//13
     "<span class='email-headline'>Subject: Mutants are real!!</span>A council meeting has been called in the city where [COMPANY NAME]’s most productive industrial sector is located in regards to how the company’s policy of dumping hazardous chemical waste into nearby lakes and streams may be affecting the quality of life of those living within a 200 mile radius of the production plants. Environmentalists are claiming that toxic chemicals are leaching into the local aquifer and the resulting mass poisoning of the city’s population has caused mutations amongst the townsfolk."
     ,//14

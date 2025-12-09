@@ -73,14 +73,17 @@ body {
 }
 
 #paper p{   
-    padding-top: 71px;
-    padding-left: 71px;
-    padding-right: 66px;
-    
+    padding-top: 85px;
+    padding-left: 75px;
+    padding-right: 75px;
+    font-family: "longtxt";
+    font-size: 11pt;
 }
 
 #prompts{
     padding-left: 71px;
+    font-family: "longtxt";
+    font-size: 11pt;
 }
 
 
@@ -227,11 +230,11 @@ body {
 
 #choice_window_text_container{
     background-color: transparent;
-    width:600px;
+    width:650px;
     height:150px;
     color:#255946;
-    top: 50%;
-    left:12%;
+    top: 45%;
+    left:8%;
     position: inherit;
     font-family: "longtxt";
     font-weight: 400;
